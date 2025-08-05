@@ -3,7 +3,10 @@ import cors from 'cors';
 import allocateRoute from './routes/allocate.js';
 
 const app = express();
-app.use(cors()); // <-- add this line!
+// app.use(cors()); //
+app.use(cors({
+  origin: 'https://descount-allocation-engine-frontend.onrender.com'
+}));
 app.use(express.json());
 app.use('/api/allocate-discounts', allocateRoute);
 
@@ -13,3 +16,4 @@ app.listen(PORT, () => {
 });
 
 export default app;
+
