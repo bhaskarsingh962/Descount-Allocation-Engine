@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AllocationResult from "./components/AllocationResult";
 
-const backendApi = "https://descount-allocation-engine-backend.onrender.com";
+const backendApi = "https://descount-allocation-engine-backend.onrender.com/api/allocate-discounts";
 
 const initialAgent = {
   id: "",
