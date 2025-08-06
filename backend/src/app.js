@@ -8,6 +8,12 @@ app.use(cors({
   origin: 'https://descount-allocation-engine-frontend.onrender.com'
 }));
 
+app.options('*', cors({
+  origin: 'https://descount-allocation-engine-frontend.onrender.com',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true // Only add if you need cookies/auth
+}));
 
 app.use(express.json());
 app.use('/api/allocate-discounts', allocateRoute);
@@ -18,6 +24,7 @@ app.listen(PORT, () => {
 });
 
 export default app;
+
 
 
 
